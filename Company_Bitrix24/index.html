@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="company_bitrix.php" method="post">
+        <label for="nome_do_lead"> Informe o titulo do Lead: </label><input type="text" name="nome_do_lead" id="nome_do_lead"><br/>
+        <label for="nome_contato"> o seu Nome: </label><input type="text" name="nome_contato" id="nome_contato"><br/>
+        <label for="sobrenome_contato"> O seu sobrenome: </label><input type="text" name="sobrenome_contato" id="sobrenome_contato"><br/>
+        <label for="valor">Informe o valor: </label><input type="number" name="valor" id="valor"><br/>
+        <label for="telefone1">Informe o Telefone de Contato 1: </label><input type="tel" name="telefones[]" id="telefones"><br/>
+        <label for="telefone1">Informe o Telefone de Contato 2: </label><input type="tel" name="telefones[]" id="telefones"><br/>
+        <label for="telefone1">Informe o Telefone de Contato 3: </label><input type="tel" name="telefones[]" id="telefones"><br/>
+        <input type="submit" value="Enviar meu Lead">
+    </form>
+
+</body>
+
+</html>
