@@ -1,20 +1,22 @@
 <?php
 
 //Informações
-$nome_lead = $_POST['nome_do_lead'];
-$nome = $_POST["nome_contato"];
-$sobrenome = $_POST["sobrenome_contato"];
+$nome = $_POST["nome_lead"];
+$sobrenome = $_POST["sobrenome_lead"];
 $valor = $_POST["valor"];
 $telefones = $_POST["telefones"];
-
-echo 'Nome do Lead: ' .$nome_lead."<Br/>";
-echo "Contato: "  .$nome ." " .$sobrenome ."<Br/>"; 
-echo "Valor: R$" .$valor ."<Br/>";
+$emails = $_POST["emails"];
 
 $phone = [];
 
 foreach ($telefones as $telefone){
     array_push($phone, ['VALUE' => $telefone, 'VALUE_TYPE' => 'WORK'] ); 
+}
+
+$mail = [];
+
+foreach($emails as $email){
+    array_push($mail, ['VALUE' => $email, 'VALUE_TYPE' => 'WORK']);
 }
 
 
@@ -26,11 +28,12 @@ $webhookbitrix = "https://helpbr24.bitrix24.com.br/rest/936/9tz7nu2cwq03tysn/crm
 
 $dados_lead = [
     'fields'=> [
-        'TITLE' => $nome_lead,
+        'TITLE' => $nome,$sobrenome,
         'NAME' => $nome,
         'LAST_NAME' => $sobrenome,
         'OPPORTUNITY' => $valor,
         'PHONE' => $phone,
+        'EMAIL' => $mail,
     
     ]
 ];
@@ -49,3 +52,4 @@ $dados_lead = curl_exec($ch);
 
 curl_close($ch);
 
+header("Location: /index.html");

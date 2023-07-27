@@ -6,19 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
 
 <body>
     <form action="company_bitrix.php" method="post">
-        <label for="nome_do_lead"> Informe o titulo do Lead: </label><input type="text" name="nome_do_lead" id="nome_do_lead"><br/>
-        <label for="nome_contato"> o seu Nome: </label><input type="text" name="nome_contato" id="nome_contato"><br/>
-        <label for="sobrenome_contato"> O seu sobrenome: </label><input type="text" name="sobrenome_contato" id="sobrenome_contato"><br/>
-        <label for="valor">Informe o valor: </label><input type="number" name="valor" id="valor"><br/>
-        <label for="telefone1">Informe o Telefone de Contato 1: </label><input type="tel" name="telefones[]" id="telefones"><br/>
-        <label for="telefone1">Informe o Telefone de Contato 2: </label><input type="tel" name="telefones[]" id="telefones"><br/>
-        <label for="telefone1">Informe o Telefone de Contato 3: </label><input type="tel" name="telefones[]" id="telefones"><br/>
-        <input type="submit" value="Enviar meu Lead">
+        <label for="nome_fantasia"> o Nome Fantasia da Empresa: </label><input type="text" name="nome_fantasia" id="nome_fantasia"><br/>
+        <label for="razao_social"> A Razão Social da Empresa: </label><input type="text" name="razao_social" id="razao_social"><br/>
+        <label for="telefone1">Informe o Telefone da Empresa 1: </label><input type="tel" name="telefones[]" id="telefones"><br/>
+        <label for="telefone1">Informe o Telefone da Empresa 2: </label><input type="tel" name="telefones[]" id="telefones"><br/>
+        <label for="telefone1">Informe o Telefone da Empresa 3: </label><input type="tel" name="telefones[]" id="telefones"><br/>
+        <label for="e-mail">Informe o seu melhor e-mail: </label><input type="e-mail" name="emails[]" id="emails"><br/>
+
+        <input type="submit" value="Criar Empresa">
     </form>
+
+    <a class="btn btn-primary" href="/index.html" role="button">Home</a>
+
 
 </body>
 
