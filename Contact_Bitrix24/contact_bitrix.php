@@ -25,7 +25,7 @@ foreach($emails as $email){
 $webhookbitrix = "https://helpbr24.bitrix24.com.br/rest/936/9tz7nu2cwq03tysn/crm.contact.add.json";
 
 
-$dados_lead = [
+$dados_contact = [
     'fields'=> [
         'NAME' => $nome,
         'LAST_NAME' => $sobrenome,
@@ -43,9 +43,9 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 curl_setopt($ch, CURLOPT_POST, true);
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dados_lead));
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dados_contact));
 
-$dados_lead = curl_exec($ch);
+$dados_contact = curl_exec($ch);
 
 curl_close($ch);
 

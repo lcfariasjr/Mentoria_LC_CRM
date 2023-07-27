@@ -12,6 +12,8 @@
 
 <body>
     <form action="deal_bitrix.php" method="post">
+        <label for="nome_contato">Informe o Nome do contato: </label><input type="text" name="nome_contato" id="nome_contato"><br/>
+        <label for="telefone1">Informe o telefone do contato: </label><input type="tel" name="telefones[]" id="telefones"><br/>
         <label for="nome_do_deal"> Informe o Nome do Negócio: </label><input type="text" name="nome_do_deal" id="nome_do_deal"><br/>
         <label for="valor">Informe o valor do Negócio: </label><input type="number" name="valor" id="valor"><br/>
         <input type="submit" value="Enviar meu Negócio">
