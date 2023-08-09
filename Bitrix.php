@@ -1,6 +1,6 @@
 <?php
 
-class Bitrix 
+class Bitrix
 {
 
     private $webhook = "https://helpbr24.bitrix24.com.br/rest/936/9tz7nu2cwq03tysn/";

@@ -1,18 +1,13 @@
 <?php
-require "Leads_Bitrix24";
+require '../Bitrix.php';
 
-class Lead
-
+class Lead extends Bitrix
 {
-
-    public $endpoint = null;
-
-
-    public function add_Lead($endpoint, $dados)
+    public function add($dados)
     {
-        $endpoint = "crm.lead.add.json";
+        $endpoint = "crm.lead.add";
+        return $this->call($endpoint, $dados);
     }
-
 
     public function list_Lead($endpoint)
     {

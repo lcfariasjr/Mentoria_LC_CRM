@@ -12,13 +12,13 @@ $emails = $_POST["emails"];
 
 $phone = [];
 
-foreach ($telefones as $telefone){
-    array_push($phone, ['VALUE' => $telefone, 'VALUE_TYPE' => 'WORK'] ); 
+foreach ($telefones as $telefone) {
+    array_push($phone, ['VALUE' => $telefone, 'VALUE_TYPE' => 'WORK']);
 }
 
 $mail = [];
 
-foreach($emails as $email){
+foreach ($emails as $email) {
     array_push($mail, ['VALUE' => $email, 'VALUE_TYPE' => 'WORK']);
 }
 
@@ -29,27 +29,20 @@ foreach($emails as $email){
 //Webhook
 //$webhookbitrix = "https://helpbr24.bitrix24.com.br/rest/936/9tz7nu2cwq03tysn/crm.lead.add.json";
 
-$endpoint = "crm.lead.add.json";
-
 $dados_lead = [
-    'fields'=> [
-        'TITLE' => $nome,$sobrenome,
+    'fields' => [
+        'TITLE' => $nome, $sobrenome,
         'NAME' => $nome,
         'LAST_NAME' => $sobrenome,
         'OPPORTUNITY' => $valor,
         'PHONE' => $phone,
         'EMAIL' => $mail,
-    
+
     ]
 ];
 
-//$lead = new Lead();
-//$lead->add_Lead($endpoint);
-
-$bitrix = new Bitrix();
-
-$bitrix->call($endpoint,$dados_lead);
-
+$lead = new Lead();
+$lead->add($dados_lead);
 
 /* 
 $ch = curl_init();
