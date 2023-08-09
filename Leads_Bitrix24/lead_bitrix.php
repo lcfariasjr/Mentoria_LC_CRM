@@ -1,5 +1,8 @@
 <?php
 
+require "../Classe_Bitrix.php";
+require "./lead_bitrix.php";
+
 //Informações
 $nome = $_POST["nome_lead"];
 $sobrenome = $_POST["sobrenome_lead"];
@@ -22,9 +25,11 @@ foreach($emails as $email){
 
 
 
-//Webhook
-$webhookbitrix = "https://helpbr24.bitrix24.com.br/rest/936/9tz7nu2cwq03tysn/crm.lead.add.json";
 
+//Webhook
+//$webhookbitrix = "https://helpbr24.bitrix24.com.br/rest/936/9tz7nu2cwq03tysn/crm.lead.add.json";
+
+$endpoint = "crm.lead.add.json";
 
 $dados_lead = [
     'fields'=> [
@@ -38,7 +43,15 @@ $dados_lead = [
     ]
 ];
 
+//$lead = new Lead();
+//$lead->add_Lead($endpoint);
 
+$bitrix = new Bitrix();
+
+$bitrix->call($endpoint,$dados_lead);
+
+
+/* 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $webhookbitrix);
 
@@ -51,5 +64,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($dados_lead));
 $dados_lead = curl_exec($ch);
 
 curl_close($ch);
+
+*/
 
 header("Location: /index.html");
