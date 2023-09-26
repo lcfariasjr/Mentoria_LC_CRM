@@ -1,7 +1,8 @@
 <?php
 
-require "../Classe_Bitrix.php";
-require "./lead_bitrix.php";
+//require "../Classe_Bitrix.php";
+require "./Lead.php";
+//require "./processosDB.php";
 
 //Informações
 $nome = $_POST["nome_lead"];
@@ -42,7 +43,18 @@ $dados_lead = [
 ];
 
 $lead = new Lead();
-$lead->add($dados_lead);
+$result_newlead = $lead->add($dados_lead); 
+
+
+if (isset($result_newlead['result'])){
+    $newLeadId = $result_newlead['result'];
+    echo 'Lead criado com Sucesso .ID: '.$newLeadId;
+}
+else{
+    echo 'Falha ao criar Lead'.$result;
+}
+
+
 
 /* 
 $ch = curl_init();
@@ -60,4 +72,4 @@ curl_close($ch);
 
 */
 
-header("Location: /index.html");
+//header("Location: /index.html");

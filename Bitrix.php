@@ -22,11 +22,24 @@ class Bitrix
 
         $result = curl_exec($ch);
 
+        if ($result === false){
+            echo 'Erro ao Criar o LEAD: ' .curl_error($ch);
+        }
+        else{
+            $resultData = json_decode($result, true);
+        }
+
         curl_close($ch);
 
-        return $result;
+        return $resultData;
     }
+    
+   
+
 }
+
+
+
 
 /*
 $ch = curl_init();
