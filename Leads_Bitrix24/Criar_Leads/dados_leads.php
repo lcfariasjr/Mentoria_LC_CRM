@@ -17,6 +17,7 @@ class Dados
         $this->valor = $valor;
         $this->telefones = $telefones;
         $this->emails = $emails;
+        
     }
 
 }

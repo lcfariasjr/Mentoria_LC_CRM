@@ -30,6 +30,7 @@ class Bitrix
         }
 
         curl_close($ch);
+        
 
         return $resultData;
     }

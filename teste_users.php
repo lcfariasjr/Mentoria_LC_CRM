@@ -12,6 +12,7 @@ curl_close($cr);
 //echo(gettype($dados_users));
 
 
+
 $dados_users = json_decode($dados_users, true);
 $dados_users = $dados_users['result'];
 

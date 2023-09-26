@@ -21,6 +21,7 @@ $users = $query->fetchAll();
 
 foreach($users as $key => $user){
     echo $user-> firstName;
+    
 }
 
 //$result = $db->query('select rowid,* from users');

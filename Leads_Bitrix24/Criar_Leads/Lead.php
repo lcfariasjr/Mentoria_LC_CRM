@@ -31,5 +31,6 @@ class Lead extends Bitrix
     {
         $this->db->exec("INSERT INTO leads (id, firstName, lastName, valor, telefone, email)
         VALUES ($newLeadId, $nome, $sobrenome, $valor, $phone, $mail)");
+        
     }
 }
