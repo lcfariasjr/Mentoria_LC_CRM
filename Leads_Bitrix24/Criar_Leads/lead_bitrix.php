@@ -43,6 +43,7 @@ $dados_lead = [
     ]
 ];
 
+//instanciando a Classe Lead para chamar o função Add.
 $lead = new Lead();
 $result_newlead = $lead->add($dados_lead); 
 
@@ -50,10 +51,20 @@ $result_newlead = $lead->add($dados_lead);
 if (isset($result_newlead['result'])){
     $newLeadId = $result_newlead['result'];
     echo 'Lead criado com Sucesso .ID: '.$newLeadId;
+
+
 }
 else{
-    echo 'Falha ao criar Lead'.$result;
+    echo 'Falha ao criar Lead'.$result_newlead;
 }
+
+
+//instanciando a Classe Lead para chamar o função AddToDb.
+
+$lead->addToDb($newLeadId, $nome, $sobrenome, $valor, $phone, $mail);
+
+
+
 
 
 
